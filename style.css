@@ -152,10 +152,9 @@ li {
   text-decoration: none;
 }
 
-.menu__link:not(.menu__link--primary){
+.menu__link:not(.menu__link--primary) {
   font-size: 18px;
   color: #000;
-  
 }
 
 .btn__menu--close {
@@ -165,6 +164,76 @@ li {
   padding: 8px;
   color: #6415ff;
 }
+
+section {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}
+
+/* Sections coming from the left */
+section:nth-of-type(odd) {
+  animation-name: slideFromLeft;
+}
+
+/* Sections coming from the right */
+section:nth-of-type(even) {
+  animation-name: slideFromRight;
+}
+
+section:nth-of-type(1) {
+  animation-delay: 0s;
+}
+
+section:nth-of-type(2) {
+  animation-delay: 0.5s;
+}
+
+section:nth-of-type(3) {
+  animation-delay: 0.1s;
+}
+
+section:nth-of-type(4) {
+  animation-delay: 0.15s;
+}
+
+section:nth-of-type(5) {
+  animation-delay: 0.2s;
+}
+
+section:nth-of-type(6) {
+  animation-delay: 0.75s;
+}
+
+/* LEFT */
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* RIGHT */
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
 /*
 
 FIRST PAGE
@@ -176,7 +245,7 @@ FIRST PAGE
   padding-bottom: 80px;
 }
 
-.bTGIKK {
+.front__page  {
   width: 100%;
   display: flex;
   align-items: center;
@@ -271,7 +340,7 @@ SECOND PAGE
   padding: 80px 0;
 }
 
-.row--feat{
+.row--feat {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -299,7 +368,7 @@ SECOND PAGE
   color: #243e63;
 }
 
-.services>p {
+.services > p {
   width: 100%;
   max-width: 700px;
   margin: 20px auto 0;
@@ -320,7 +389,6 @@ SECOND PAGE
   height: 1px;
   margin-top: 30px;
 }
-
 
 .boxs {
   display: flex;
@@ -379,7 +447,6 @@ QUALITY WORK
 
 */
 
-/* QUALITY WORK */
 
 .row__qt {
   width: 100%;
@@ -568,7 +635,7 @@ STEP SECTION
 PLANS
 
 */
-.container {
+.container--quality{
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -784,7 +851,7 @@ Last page
 
 */
 
-section:has(.tcf) {
+section:has(.box--prp) {
   width: 100%;
   background: #6415ff;
   color: white;
@@ -792,14 +859,14 @@ section:has(.tcf) {
   padding: 0;
 }
 
-section:has(.tcf) > .row {
+section:has(.box--prp) > .row {
   width: 100%;
   max-width: 100%;
   margin: 0;
   padding: 0;
 }
 
-.tcf {
+.box--prp {
   width: 100%;
   max-width: 1480px;
   margin: 0 auto;
@@ -807,24 +874,24 @@ section:has(.tcf) > .row {
   box-sizing: border-box;
 }
 
-.tcf {
+.box--prp {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.ndn {
+.list {
   width: 18%;
 }
 
-.ndn h5 {
+.list h5 {
   margin: 0 0 28px;
   color: white;
   font-size: 18px;
   font-weight: 700;
 }
 
-.ndn ul {
+ .list ul {
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -833,13 +900,13 @@ section:has(.tcf) > .row {
   padding: 0;
 }
 
-.ndn li {
+.list li {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.ndn a {
+.list a {
   color: white;
   text-decoration: none;
   font-size: 16px;
@@ -911,89 +978,32 @@ section:has(.tcf) > .row {
   font-size: 16px;
 }
 
-/* =========================================================
-   RESPONSIVE DESIGN
-   ========================================================= */
+/* 
 
 
-/* =========================
-   LARGE SCREENS
-   ========================= */
-
-@media (max-width: 1024px) {
-
-  .row__qt {
-    padding: 70px 32px;
-  }
-
-  .quality {
-    gap: 40px;
-  }
-
-  .quality__h2 {
-    font-size: 42px;
-  }
-
-  .quality__des {
-    font-size: 16px;
-  }
-
-  .qt__img {
-    max-width: 550px;
-  }
-}
-
-@media (min-width: 1201px) {
-
-  .row,
-  .row--feat,
-  .row__qt,
-  .container__steps,
-  .container {
-    max-width: 1200px;
-  }
-
-}
+MEDIA
 
 
-/* =========================
+*/
+
+/* -------------------------
    TABLETS / SMALL LAPTOPS
-   768px - 1200px
-   ========================= */
+   901px - 1199px
+------------------------- */
 
-@media (max-width: 1200px) {
-
-  /* GENERAL */
-
+@media (max-width: 1199px) {
   .row,
   .row--feat,
   .row__qt,
+  .container,
   .container__steps,
-  .container {
-    width: 100%;
+  .container__plan {
+    max-width: 100%;
     padding-left: 32px;
     padding-right: 32px;
   }
-
-
-  /* NAVIGATION */
-
-  nav {
-    height: 80px;
-  }
-
-  .row {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
 
   /* HERO */
-
-  .hero__row {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
 
   .left__column {
     width: 45%;
@@ -1007,30 +1017,16 @@ section:has(.tcf) > .row {
     font-size: 42px;
   }
 
-  .first__para {
-    font-size: 17px;
-  }
-
-
   /* SERVICES */
 
   .boxs {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .box {
-    padding: 28px 18px;
+    padding: 28px 16px;
   }
-
-  .title {
-    font-size: 21px;
-  }
-
-  .description {
-    font-size: 15px;
-  }
-
 
   /* QUALITY */
 
@@ -1043,13 +1039,12 @@ section:has(.tcf) > .row {
   }
 
   .quality > div:last-child {
-    width: 48%;
+    width: 52%;
   }
 
   .quality__h2 {
     font-size: 42px;
   }
-
 
   /* STEPS */
 
@@ -1066,7 +1061,6 @@ section:has(.tcf) > .row {
     font-size: 42px;
   }
 
-
   /* PRICING */
 
   .plans__cards {
@@ -1074,9 +1068,8 @@ section:has(.tcf) > .row {
   }
 
   .plan--container {
-    width: 31%;
+    width: calc((100% - 40px) / 3);
   }
-
 
   /* FOOTER */
 
@@ -1084,19 +1077,16 @@ section:has(.tcf) > .row {
     padding-left: 32px;
     padding-right: 32px;
   }
-
 }
 
-
-/* =========================
+/* -------------------------
    TABLET
    768px - 900px
-   ========================= */
+------------------------- */
 
-/* TABLET */
 @media (max-width: 900px) {
+  /* NAVIGATION */
 
-  /* NAVBAR */
   .nav__links {
     display: none;
   }
@@ -1105,8 +1095,13 @@ section:has(.tcf) > .row {
     display: block;
   }
 
-
   /* HERO */
+
+  .hero__row {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
   .bTGIKK {
     flex-direction: column;
     text-align: center;
@@ -1123,8 +1118,13 @@ section:has(.tcf) > .row {
     align-items: center;
   }
 
+  .left__column h1 {
+    max-width: 700px;
+    font-size: 42px;
+  }
+
   .first__para {
-    max-width: 600px;
+    max-width: 650px;
   }
 
   .email__form {
@@ -1132,221 +1132,93 @@ section:has(.tcf) > .row {
   }
 
   .right__column {
-    margin-top: 50px;
+    margin-top: 60px;
   }
 
+  .sec__img {
+    max-width: 600px;
+    margin: 0 auto;
+  }
 
   /* SERVICES */
-  .box {
-    width: 50%;
-  }
 
-
-  /* QUALITY */
-  .quality {
-    gap: 40px;
-  }
-
-  .quality__h2 {
+  .services h2 {
     font-size: 42px;
   }
 
-
-  /* STEPS */
-  .row__steps {
-    gap: 40px;
-  }
-
-
-  /* PRICING */
-  .plans__cards {
-    gap: 20px;
-  }
-
-  .plan--container {
-    width: 31%;
-  }
-}
-
-
-/* MOBILE */
-@media (max-width: 600px) {
-
-  /* NAVBAR */
-  nav {
-    height: 70px;
-  }
-
-  .row {
-    padding: 0 20px;
-  }
-
-
-  /* MOBILE MENU */
-  .menu__backdrop {
-    position: fixed;
-  }
-
-
-  /* HERO */
-  .hero__row {
-    padding: 50px 20px;
-  }
-
-  .left__column h1 {
-    font-size: 36px;
-  }
-
-  .first__para {
-    font-size: 16px;
-  }
-
-  .email__form {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .email__form input {
-    height: 55px;
-  }
-
-  .email__form button {
-    width: 100%;
-    height: 50px;
-    margin-left: 0;
-  }
-
-
-  /* SERVICES */
-  .container--feat {
-    padding: 60px 20px;
-  }
-
-  .services h2 {
-    font-size: 36px;
-  }
-
   .box {
-    width: 100%;
-  }
-
-
-  /* QUALITY */
-  .row__qt {
-    padding: 60px 20px;
-  }
-
-  .quality {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .quality__work {
-    width: 100%;
-    align-items: center;
-  }
-
-  .quality__h2 {
-    font-size: 36px;
-  }
-
-  .quality > div:last-child {
-    width: 100%;
-    justify-content: center;
-  }
-
-
-  /* STEPS */
-  .row__steps {
-    flex-direction: column;
-  }
-
-  .steps__img {
-    width: 100%;
-  }
-
-  .steps__column {
-    width: 100%;
-    padding-left: 0;
-    margin-top: 40px;
-  }
-
-  .stp--h2 {
-    font-size: 36px;
-  }
-
-
-  /* PRICING */
-  .plans__cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .plan--container {
-    width: 100%;
-    max-width: 350px;
-  }
-
-
-  /* FOOTER */
-  .tcf {
-    padding: 60px 20px 40px;
-  }
-
-  .ndn {
     width: 50%;
   }
 
-  .info {
-    flex-direction: column;
-    gap: 25px;
-    text-align: center;
+  /* QUALITY */
+
+  .quality {
+    gap: 40px;
+  }
+
+  .quality__h2 {
+    font-size: 38px;
+  }
+
+  .quality__des {
+    font-size: 16px;
+  }
+
+  /* STEPS */
+
+  .stp--h2 {
+    font-size: 38px;
+  }
+
+  .stp--ul {
+    margin-top: 35px;
+  }
+
+  /* PRICING */
+
+  .plans__cards {
+    gap: 16px;
+  }
+
+  .plan--container {
+    width: calc((100% - 32px) / 3);
+  }
+
+  .plan__header .price {
+    font-size: 38px;
+  }
+
+  .plan__feat {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* FOOTER */
+
+  .ndn {
+    width: 20%;
   }
 }
 
-
-/* SMALL PHONES */
-@media (max-width: 400px) {
-
-  .left__column h1 {
-    font-size: 30px;
-  }
-
-  .services h2,
-  .quality__h2,
-  .stp--h2,
-  .plans__header h2 {
-    font-size: 30px;
-  }
-
-  .box {
-    padding: 24px 0;
-  }
-
-  .description {
-    font-size: 15px;
-  }
-}
-/* =========================
+/* -------------------------
    MOBILE
-   600px - 767px
-   ========================= */
+   481px - 767px
+------------------------- */
 
 @media (max-width: 767px) {
-
   /* GENERAL */
 
   .row,
   .row--feat,
   .row__qt,
+  .container,
   .container__steps,
-  .container {
+  .container__plan {
     padding-left: 20px;
     padding-right: 20px;
   }
 
-
-  /* NAV */
+  /* NAVIGATION */
 
   nav {
     height: 70px;
@@ -1366,28 +1238,19 @@ section:has(.tcf) > .row {
     font-size: 24px;
   }
 
-
   /* MOBILE MENU */
 
   .menu__backdrop {
     position: fixed;
-    min-height: 100vh;
+    inset: 0;
     width: 100%;
+    height: 100vh;
   }
 
   .menu__links {
     width: 100%;
     padding-top: 70px;
   }
-
-  .menu__list {
-    padding: 22px 0;
-  }
-
-  .menu__link {
-    font-size: 18px;
-  }
-
 
   /* HERO */
 
@@ -1397,41 +1260,31 @@ section:has(.tcf) > .row {
   }
 
   .left__column h1 {
-    font-size: 38px;
+    font-size: 36px;
     line-height: 1.2;
   }
 
   .first__para {
+    margin: 24px 0;
     font-size: 16px;
     line-height: 1.6;
-    margin: 24px 0;
   }
 
   .sec__para {
-    margin-top: 55px;
+    margin-top: 50px;
   }
 
   .email__form {
     max-width: 100%;
   }
 
-  .email__form input {
-    height: 56px;
-    font-size: 14px;
-    padding-left: 18px;
-  }
-
-  .email__form button {
-    height: 44px;
-    margin-left: -125px;
-    padding: 0 20px;
-    font-size: 13px;
-  }
-
   .right__column {
-    margin-top: 40px;
+    margin-top: 45px;
   }
 
+  .sec__img {
+    width: 100%;
+  }
 
   /* SERVICES */
 
@@ -1440,28 +1293,26 @@ section:has(.tcf) > .row {
     padding-bottom: 60px;
   }
 
-  .services h5 {
-    margin-bottom: 12px;
-  }
-
   .services h2 {
     font-size: 36px;
     line-height: 1.2;
   }
 
   .services > p {
+    max-width: 600px;
     font-size: 16px;
-    line-height: 1.6;
   }
 
   .boxs {
-    grid-template-columns: 1fr;
-    gap: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     margin-top: 35px;
   }
 
   .box {
-    padding: 15px 5px;
+    width: 100%;
+    padding: 15px 0;
   }
 
   .img--con {
@@ -1470,20 +1321,17 @@ section:has(.tcf) > .row {
     min-width: 60px;
   }
 
-  .title {
-    font-size: 21px;
-  }
-
-  .description {
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-
   /* QUALITY */
 
   .quality {
-    padding: 60px 0;
+    flex-direction: column;
+    gap: 45px;
+    text-align: center;
+  }
+
+  .quality__work {
+    width: 100%;
+    align-items: center;
   }
 
   .quality__h2 {
@@ -1491,27 +1339,45 @@ section:has(.tcf) > .row {
   }
 
   .quality__des {
+    max-width: 600px;
     font-size: 16px;
   }
 
-  .quality__btn {
-    margin-top: 25px;
+  .quality > div:last-child {
+    width: 100%;
+    justify-content: center;
   }
 
   .qt__img {
-    margin-top: 30px;
+    width: 100%;
+    max-width: 650px;
   }
-
 
   /* STEPS */
 
-  .container__steps {
-    padding-top: 50px;
-    padding-bottom: 50px;
+  .row__steps {
+    flex-direction: column;
+    gap: 45px;
   }
 
   .steps__img {
-    margin-bottom: 40px;
+    width: 100%;
+  }
+
+  .step__img {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .steps__column {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .steps__des {
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   .stp--h2 {
@@ -1522,19 +1388,9 @@ section:has(.tcf) > .row {
     margin-top: 35px;
   }
 
-  .stp--li {
-    margin-bottom: 30px;
-  }
-
-  .numb__li {
-    width: 45px;
-    font-size: 30px;
-  }
-
-
   /* PRICING */
 
-  .container {
+  .container__plan {
     padding-top: 60px;
     padding-bottom: 60px;
   }
@@ -1554,6 +1410,7 @@ section:has(.tcf) > .row {
   .plans__cards {
     flex-direction: column;
     align-items: center;
+    gap: 30px;
   }
 
   .plan--container {
@@ -1561,49 +1418,47 @@ section:has(.tcf) > .row {
     max-width: 400px;
   }
 
-
   /* FOOTER */
 
   .tcf {
-    padding: 70px 25px 50px;
+    padding: 70px 20px 50px;
   }
 
   .ndn {
     width: 50%;
-  }
-
-  .ndn h5 {
-    font-size: 16px;
-  }
-
-  .ndn a {
-    font-size: 15px;
+    margin-bottom: 35px;
   }
 
   .sep {
-    margin: 50px 0 45px;
+    margin: 35px 0 45px;
   }
 
-  .info p {
-    font-size: 14px;
+  .info {
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
   }
-
 }
 
-
-/* =========================
+/* -------------------------
    SMALL PHONES
    480px and below
-   ========================= */
+------------------------- */
 
 @media (max-width: 480px) {
+  /* GENERAL */
 
-  /* NAV */
-
-  .row {
+  .row,
+  .row--feat,
+  .row__qt,
+  .container,
+  .container__steps,
+  .container__plan {
     padding-left: 16px;
     padding-right: 16px;
   }
+
+  /* NAVIGATION */
 
   .Treact {
     font-size: 20px;
@@ -1615,7 +1470,6 @@ section:has(.tcf) > .row {
     margin-right: 8px;
   }
 
-
   /* HERO */
 
   .hero__row {
@@ -1624,7 +1478,7 @@ section:has(.tcf) > .row {
   }
 
   .left__column h1 {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .first__para {
@@ -1635,8 +1489,9 @@ section:has(.tcf) > .row {
     font-size: 10px;
   }
 
+  /* EMAIL FORM */
+
   .email__form {
-    display: flex;
     flex-direction: column;
     gap: 12px;
   }
@@ -1651,7 +1506,6 @@ section:has(.tcf) > .row {
     height: 50px;
     margin-left: 0;
   }
-
 
   /* SERVICES */
 
@@ -1679,8 +1533,8 @@ section:has(.tcf) > .row {
 
   .description {
     font-size: 14px;
+    line-height: 1.7;
   }
-
 
   /* QUALITY */
 
@@ -1691,7 +1545,6 @@ section:has(.tcf) > .row {
   .quality__des {
     font-size: 15px;
   }
-
 
   /* STEPS */
 
@@ -1712,7 +1565,6 @@ section:has(.tcf) > .row {
     font-size: 13px;
   }
 
-
   /* PRICING */
 
   .plans__header h2 {
@@ -1727,20 +1579,18 @@ section:has(.tcf) > .row {
     max-width: 100%;
   }
 
-
   /* FOOTER */
 
   .ndn {
     width: 50%;
   }
 
-  .tcf {
-    padding-left: 20px;
-    padding-right: 20px;
+  .ndn a {
+    font-size: 14px;
   }
 
-  .info {
-    gap: 20px;
+  .info p {
+    font-size: 13px;
   }
 
   .social__links {
@@ -1751,19 +1601,20 @@ section:has(.tcf) > .row {
     width: 38px;
     height: 38px;
   }
-
 }
 
-
-/* =========================
+/* -------------------------
    VERY SMALL PHONES
    360px and below
-   ========================= */
+------------------------- */
 
 @media (max-width: 360px) {
+  .Treact {
+    font-size: 19px;
+  }
 
   .left__column h1 {
-    font-size: 28px;
+    font-size: 27px;
   }
 
   .services h2,
@@ -1771,10 +1622,6 @@ section:has(.tcf) > .row {
   .stp--h2,
   .plans__header h2 {
     font-size: 27px;
-  }
-
-  .Treact {
-    font-size: 19px;
   }
 
   .img--con {
@@ -1790,5 +1637,4 @@ section:has(.tcf) > .row {
   .description {
     font-size: 13px;
   }
-
 }
