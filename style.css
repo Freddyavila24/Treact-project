@@ -1102,7 +1102,7 @@ MEDIA
     padding-bottom: 60px;
   }
 
-  .bTGIKK {
+  .front__page {
     flex-direction: column;
     text-align: center;
   }
@@ -1211,9 +1211,10 @@ MEDIA
   .row,
   .row--feat,
   .row__qt,
-  .container,
+  .container--feat,
   .container__steps,
-  .container__plan {
+  .container__plan,
+  .container--quality {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -1420,11 +1421,11 @@ MEDIA
 
   /* FOOTER */
 
-  .tcf {
+  .box--prp {
     padding: 70px 20px 50px;
   }
 
-  .ndn {
+  .list {
     width: 50%;
     margin-bottom: 35px;
   }
@@ -1581,11 +1582,11 @@ MEDIA
 
   /* FOOTER */
 
-  .ndn {
+  .list {
     width: 50%;
   }
 
-  .ndn a {
+  .list a {
     font-size: 14px;
   }
 
