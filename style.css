@@ -1694,12 +1694,20 @@ MEDIA
   .box {
     width: 100%;
     padding: 15px 0;
+    flex-direction: column;
+    text-align: center;
   }
 
   .img--con {
     width: 60px;
     height: 60px;
     min-width: 60px;
+  }
+  
+  .txt--con {
+    margin-left: 0px;
+    text-align: center;
+    max-width: 70%;
   }
 
   /* QUALITY */
@@ -1767,6 +1775,12 @@ MEDIA
 
   .stp--ul {
     margin-top: 35px;
+  }
+  
+  .stp--li {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   /* PRICING */
